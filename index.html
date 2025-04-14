@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* For Login Form */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #ddd;
+        }
+
+        /* For To-Do List */
+        .todo-form input {
+            width: calc(100% - 100px);
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .todo-list {
+            margin-top: 20px;
+        }
+
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        .todo-item button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .todo-item button.update {
+            background-color: #ffa500;
+        }
+
+        .todo-item button.delete {
+            background-color: #f44336;
+        }
+
+        /* For Responsive Cards */
+        .cards {
+            display: grid;
+            gap: 20px;
+        }
+
+        @media (min-width: 992px) {
+            .cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 991px) and (min-width: 600px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 599px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Login Form -->
+<div id="loginPage" class="container">
+    <h2>Login Form</h2>
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <button type="submit" id="submitBtn" disabled>Login</button>
+    </form>
+</div>
+
+<!-- To-Do List Homepage -->
+<div id="todoPage" class="container" style="display:none;">
+    <h2>To-Do List</h2>
+    <div class="todo-form">
+        <input type="text" id="taskInput" placeholder="Enter a new task">
+        <button id="addBtn" onclick="addTask()">Add Task</button>
+    </div>
+    <div class="todo-list" id="todoList"></div>
+</div>
+
+<!-- About Page with Cards -->
+<div id="aboutPage" class="container" style="display:none;">
+    <h2>About Us - Our Cards</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Card 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac justo eu urna consequat hendrerit.</p>
+        </div>
+        <div class="card">
+            <h3>Card 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac justo eu urna consequat hendrerit.</p>
+        </div>
+        <div class="card">
+            <h3>Card 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac justo eu urna consequat hendrerit.</p>
+        </div>
+    </div>
+</div>
+
+<script src="script.js">
+</script>
+
+</body>
+</html>
